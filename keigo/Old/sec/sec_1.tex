@@ -1,0 +1,95 @@
+\vspace*{-2\zw}
+\section[特定の形で表現される敬語]{普通語の要素を使わず、特定の形で表現される敬語}
+\begin{longtblr}{
+    cells = {c,m,font = \small},
+	colspec = {|X||X|X|X|X|},
+    %hline{4-Y} = {dotted, rightpos = -0.1, leftpos = -0.1},
+    hline{1-3,Z} = {solid},
+    hline{5,6,8,10,14,17,19} = {dotted, rightpos = -0.1, leftpos = -0.1},
+	hline{2} = {solid, rightpos = 0, leftpos = 0},
+    column{1} = {font = \gtfamily\sgseries, cmd = \jidori{3\zw}},
+    %column{4} = {cmd = \arabic{rownum}},%标注行号，方便画线，仅在第一行后增添“&”即可。注意要在colsep里新设置一栏。
+    cell{1}{1-3} = {c, font = \gtfamily\sgseries, cmd = \akigumi{1\zw}},
+    cell{1}{5} = {c, font = \gtfamily\sgseries},
+    cell{2}{3-4} = {c, font = \gtfamily\sgseries\small},
+}
+\SetCell[r=2]{c}普通語&\SetCell[r=2]{c}尊敬語&\SetCell[c=2]{c}謙譲語&&\SetCell[r=2]{c}丁寧語・美化語 \\
+&&行為の向う先を立てる（Ⅰ）&相手を立てる（Ⅱ）& \\
+\SetCell[r=2]{c}いる&いらっしゃる&\SetCell[r=2]{c}&\SetCell[r=2]{c}\ruby{居}{お}る&\SetCell[r=2]{c} \\
+&お\ruby{出}{い}でになる&&& \\
+ある&&&&\ruby{御座}{ござ}います \\
+\SetCell[r=2]{c}する&\ruby{為}{な}さる&\SetCell[r=2]{c}&\SetCell[r=2]{c}\ruby{致}{いた}す&\SetCell[r=2]{c} \\
+&\ruby{遊}{あそ}ばす&&& \\
+\SetCell[r=2]{c}いく\SetCell[r=2]{c}&いらっしゃる&\SetCell[r=2]{c}\ruby{伺}{うかが}う&\SetCell[r=2]{c}\ruby{参}{まい}る&\SetCell[r=2]{c} \\
+&お出でになる&&& \\
+\SetCell[r=4]{c}来る\SetCell[r=4]{c}&いらっしゃる&\SetCell[r=4]{c}伺う&\SetCell[r=4]{c}参る&\SetCell[r=4]{c} \\
+&お出でになる&&& \\
+&\ruby{見}{み}える\linebreak{\footnotesize（おみえになる）}&&& \\
+&お\ruby{越}{こ}しになる&&& \\
+\SetCell[r=3]{c}言う&おっしゃる&\SetCell[r=3]{c}\ruby{申}{もう}し\ruby{上}{あ}げる&\SetCell[r=3]{c}申す&\SetCell[r=3]{c} \\
+&\ruby{仰}{おお}せ\ruby{付}{つ}ける&&& \\
+&のたまう&&& \\
+\SetCell[r=2]{c}会う&\SetCell[r=2]{c}&お目にかかる&\SetCell[r=2]{c}&\SetCell[r=2]{c} \\
+&&\ruby{御|目|文字}{お|め|もじ}する&& \\
+\SetCell[r=3]{c}見る&ご\ruby{覧}{らん}になる&\SetCell[r=3]{c}\ruby{拝見}{はいけん}する&\SetCell[r=3]{c}&\SetCell[r=3]{c} \\
+&ご覧なさる&&& \\
+&ご覧くださる&&& \\
+\end{longtblr}
+\pagebreak
+\vspace*{-4\zw}
+\begin{longtblr}{
+    cells = {c,m,font = \small},
+	colspec = {|X||X|X|X|X|},
+    %hline{3-Y} = {dotted, rightpos = -0.1, leftpos = -0.1},
+    hline{1-2,Z} = {solid},
+    hline{4,8,13,14,16,18,21-22,24,31-33,35,36,38-42} = {dotted, rightpos = -0.1, leftpos = -0.1},
+    hline{17} = {2}{dotted, rightpos = -0.1, leftpos = -0.1},
+    column{1} = {font = \gtfamily\sgseries},
+    %column{6} = {cmd = \arabic{rownum}},%标注行号，方便画线，仅在第一行后增添“&”即可。注意要在colsep里新设置一栏。
+    row{1} = {font = \gtfamily\sgseries},
+    cell{8,13,17,18,22,29,32,33,34}{1} = {cmd = \jidori{3\zw}},
+    rowhead = 1
+}
+語&尊&謙（Ⅰ）&謙（Ⅱ）&丁・美 \\
+\SetCell[r=2]{c}見せる&\SetCell[r=2]{c}&お目にかける&\SetCell[r=2]{c}&\SetCell[r=2]{c} \\
+&&ご覧に\ruby{入}{い}れる&& \\
+\SetCell[r=4]{c}与える\linebreak{\footnotesize（やる）}&\SetCell[r=2]{c}\ruby{下}{くだ}さる&\ruby{差}{さ}し上げる&\SetCell[r=4]{c}&\SetCell[r=4]{c}上げる \\
+&&\ruby{進|呈}{しん|てい}する&& \\
+&\SetCell[r=2]{c}\ruby{賜}{たまわ}る&\ruby{進上}{きんじょう}する&& \\
+&&\ruby{献上}{けんじょう}する&& \\
+\SetCell[r=5]{c}\ruby{貰}{もら}う&\SetCell[r=5]{c}&\ruby{頂}{いただ}く&\SetCell[r=2]{c}おる&\SetCell[r=5]{c} \\
+&&賜る&& \\
+&&\ruby{頂|戴}{ちょう|だい}する&& \\
+&&\ruby{拝|受}{はい|じゅ}する&\SetCell[r=2]{c}致す& \\
+&&\ruby{預}{あず}かる&& \\
+思う&\ruby{思}{おぼ}し\ruby{召}{め}す&\ruby{存}{ぞん}ずる&& \\
+\SetCell[r=2]{c}\jidori{3\zw}{知る}\linebreak{\footnotesize（知っている）}&\SetCell[r=2]{c}ご存じです&存じ上げている&\SetCell[r=2]{c}&\SetCell[r=2]{c} \\
+&&存じている&& \\
+食べる&召し上がる&\SetCell[r=2]{c}頂戴する&\SetCell[r=2]{c}頂く&\SetCell[r=2]{c} \\
+飲む&\ruby{上}{あ}がる&&& \\
+\SetCell[r=3]{c, cmd = {}}聞く\linebreak 耳にする&\SetCell[r=2]{c}&伺う&\SetCell[r=2]{c}&\SetCell[r=2]{c} \\
+&&\ruby{承}{うけたまわ}る&& \\
+&&\ruby{拝|聴}{はい|ちょう}する&& \\
+聞かせる&&お耳に入れる&& \\
+\ruby{訊}{き}く&&伺う&& \\
+質問する&&承る&& \\
+\SetCell[r=2]{c}訪ねる&\SetCell[r=5]{c}&伺う&\SetCell[r=5]{c}&\SetCell[r=5]{c} \\
+&&お伺いする&& \\
+&&上がる&& \\
+\SetCell[r=2]{c}訪問する&&\ruby{参|上}{さん|じょう}する&& \\
+&&お\ruby{邪|魔}{じゃ|ま}する&& \\
+\SetCell[r=2]{c}着る&召す&\SetCell[r=2]{c}&\SetCell[r=2]{c}&\SetCell[r=2]{c} \\
+&お召しになる&&& \\
+借りる&&\ruby{拝|借}{はい|しゃく}する&& \\
+寝る&お\ruby{休}{やす}みになる&&&休む \\
+\SetCell[r=2]{c}死ぬ&\footnotesize お\ruby{亡}{な}くなりになる&\SetCell[r=2]{c}&\SetCell[r=2]{c}&\SetCell[r=2]{c}亡くなる \\
+&亡くなられる&&& \\
+買う&&&&\ruby{求}{もと}める \\
+持っていく&\SetCell[r=2]{c}&\SetCell[r=2]{c}\ruby{持|参}{じ|さん}する&\SetCell[r=2]{c}&\SetCell[r=2]{c} \\
+持ってくる&&&& \\
+引き受けた&&\ruby{畏}{かしこ}まりました&&\ruby{承|知}{しょう|ち}しました \\
+気に入る&お気に召す&&& \\
+{\footnotesize（風邪を）}引く&{\footnotesize（お風邪を）}召す&&& \\
+{\footnotesize（年を）}取る&{\footnotesize（お年を）}召す&&& \\
+金を貸す&&&ご\ruby{用|立}{よう|だ}てる& \\
+\end{longtblr}

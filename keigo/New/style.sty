@@ -1,0 +1,101 @@
+\ProvidesPackage{style}
+
+\RequirePackage{tabularray}
+\RequirePackage{ragged2e}%使用ragged2e宏包中的\justifying以解决tabularray单元格换行的异常问题，注意不能直接使用\Ragged系列指令，因为其是为西文排版设计的，在对汉字进行处理时会把每一个汉字当作一个单词，从而增加不必要的间隙
+
+%需要手动在换行异常的单元格里使用\justifying
+
+\RequirePackage{luatexja-fontspec}
+\RequirePackage{luatexja-adjust}
+\ltjenableadjust[lineend = true, priority = true]
+\RequirePackage{luatexja-ruby}
+\ltjsetruby{rubysmash = true}
+\RequirePackage[a4paper, vmarginratio = 3:2, hcentering, ignoreall]{geometry}
+
+\RequirePackage[match, haranoaji, deluxe]{luatexja-preset}
+\newjfontfamily\smseries{Harano Aji Mincho Medium}
+\newjfontfamily\sgseries{Harano Aji Gothic Medium}
+\setmainfont{Nimbus Roman No9 L}
+
+\RequirePackage{udline}
+\setulminsep{0ex}{0.6ex}
+\setulsep{0pt}
+
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}}
+\newcommand{\kasenn}[1]{\unl{\textbf{#1}}}
+
+\setlength{\floatsep}{0pt}
+\setlength{\textfloatsep}{0pt}
+\setlength{\intextsep}{0pt}
+\setlength{\parskip}{0pt}
+
+\DeclareTblrTemplate{head}{default}{}
+\DeclareTblrTemplate{foot}{default}{}
+\DeclareTblrTemplate{caption}{default}{}
+
+\RenewBlockHeading{chapter}{0}{
+  font = \mcfamily\bfseries\Huge,
+  pagestyle = empty,
+  label_format = {},
+  after_label_space = 0\zw,
+  before_space = 0pt,
+  after_space = 0pt,
+  before_lines = 1,
+  after_lines = 3,
+  align = center,
+  indent = 0\zw,
+  pagebreak = clearpage
+}
+
+\RenewBlockHeading{section}{1}{%标题上下间隔异常，可尝试在\section前加\pagebreak
+  font = \gtfamily\bfseries\LARGE,
+  label_format = {},
+  after_label_space = 0\zw,
+  before_space = 0pt,%使用\gyodori也要指定space取值为0，以此精准控制间距
+  after_space = 0pt,
+  lines = 1,
+  after_lines = 1,
+  before_lines = 1,
+  align = center
+}
+
+\RenewBlockHeading{subsection}{2}{
+  font = \gtfamily\bfseries\large,
+  label_format = {},
+  after_label_space = 0\zw,
+  indent = 1\zw,
+  lines = 1,
+  before_space = 0pt,
+  after_space = 0pt
+}
+
+\NewPageStyle{body}{
+	yoko,
+	nombre_position = bottom-right,
+}
+
+
+
+\NewDocumentEnvironment{hyo}{O+b}{
+\begin{longtblr}{
+    cells = {c,m,font = \small},
+	colspec = {|X[-1,c]|X[-1,c]||X[l]|X[-1,r]|},
+    hline{3-Y} = {dotted, rightpos = -0.1, leftpos = -0.1},
+    hline{1,2,Z} = {solid},
+	%实线截断可参考以下命令
+	%hline{2} = {solid},
+	%hline{2} = {2}{solid, rightpos = 0},
+	%hline{2} = {3}{solid, leftpos = 0},
+    column{1} = {wd = 3\zw, font =\gtfamily\sgseries, cmd = \jidori{3\zw}},
+	column{2} = {r},
+    column{3} = {l},
+    cell{1}{1} = {c, font = \gtfamily\sgseries, cmd = \akigumi{4\zw}},
+    cell{1}{3} = {c, font = \gtfamily\sgseries, cmd = \akigumi{6\zw}},
+    cell{1}{4} = {c, font = \gtfamily\sgseries, cmd = \akigumi{2\zw}},
+#1
+}
+\SetCell[c=2]{c}用法&&例文&備考 \\
+#2
+\end{longtblr}
+}{}

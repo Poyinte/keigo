@@ -1,0 +1,53 @@
+\documentclass[
+    yoko, 
+    twoside,
+    book, 
+    jafontscale = 1, 
+    a4paper,
+    ignoreall,
+    noheadfoot,
+    centering,
+]{jlreq}
+
+\usepackage{style}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{mathabx}
+
+\usepackage{xparse}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\soroe}{mm} % 两端对齐指令
+ {
+  % 测量文本宽度
+  \hbox_set:Nn \l_tmpa_box { #2 }
+  % 先判断是否 <= 1\zw
+  \dim_compare:nTF { \box_wd:N \l_tmpa_box <= 1\zw }
+    { #2 } % 太短，直接原样输出
+    {
+      % 否则再执行原来的逻辑
+      \dim_compare:nTF { \box_wd:N \l_tmpa_box < #1 }
+        { \jidori{#1}{#2} }
+        { #2 }
+    }
+ }
+\ExplSyntaxOff
+
+\newcommand{\ogo}{\adjustbox{height = .75\zw, valign = m, raise = -.15ex}{\adjustbox{left = 1.6ex}{お}\adjustbox{raise = -.7ex}{ご}}}
+
+\newcommand{\tede}{\adjustbox{height = .75\zw, valign = m, raise = -.15ex}{\adjustbox{left = 1.6ex}{て}\adjustbox{raise = -.5ex}{で}}}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\input{sec/sec_1.tex}
+
+\input{sec/sec_2.tex}
+
+\input{sec/sec_3.tex}
+
+\input{sec/sec_4.tex}
+
+\end{document}
